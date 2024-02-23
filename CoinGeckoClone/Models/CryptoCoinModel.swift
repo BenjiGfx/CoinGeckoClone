@@ -8,7 +8,8 @@
 import Foundation
 
 // MARK: - CoinElement
-struct CryptoCoinModel: Identifiable, Codable {
+struct CryptoCoinModel: Identifiable, Codable, Hashable {
+    
     let id, symbol, name: String
     let image: String
     let currentPrice: Double
@@ -28,7 +29,7 @@ struct CryptoCoinModel: Identifiable, Codable {
     let priceChangePercentage24HInCurrency: Double?
     
     
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey, Hashable {
         case id, symbol, name, image
         case currentPrice = "current_price"
         case marketCap = "market_cap"
@@ -61,6 +62,6 @@ struct CryptoCoinModel: Identifiable, Codable {
 }
 
 // MARK: - SparklineIn7D
-struct SparklineIn7D: Codable {
+struct SparklineIn7D: Codable, Hashable {
     let price: [Double]?
 }
