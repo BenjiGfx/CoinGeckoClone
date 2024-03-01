@@ -17,7 +17,7 @@ struct NewsDetailView: View {
                 Text(news.title)
                     .font(.title)
                     .bold()
-                AsyncImage(url: URL(string: news.thumb_2x)) { phase in
+                AsyncImage(url: URL(string: news.thumb2X)) { phase in
                     switch phase {
                     case .success(let image):
                         image
@@ -63,9 +63,9 @@ struct NewsDetailView_Previews: PreviewProvider {
                                  description: "In a dynamic intersection of global financial interests, the South Korean regulators and the U.S. financial authorities are set to talk about non-fungible tokens (NFTs), and Bitcoin ETFs. Notably, South Korea’s Financial Supervisory Service (FSS) and the U.S. Securities and Exchange Commission (SEC) are set to engage in crucial deliberations regarding the inclusion of Bitcoin The post South Korea Regulator & SEC Chair To Discuss Bitcoin ETF & NFTs appeared first on CoinGape.",
                                  author: "Rupam Roy",
                                  url: "https://coingape.com/south-korea-regulator-sec-chair-discuss-bitcoin-etf-nft/",
-                                 updated_at: 1708939299,
-                                 news_site: "CoinGape",
-                                 thumb_2x: "https://assets.coingecko.com/articles/images/1337996/large/Group-49353-1.jpeg?1708939298")
+                                 updatedAt: 1708939299,
+                                 newsSite: "CoinGape",
+                                 thumb2X: "https://assets.coingecko.com/articles/images/1337996/large/Group-49353-1.jpeg?1708939298")
         )
     }
 }

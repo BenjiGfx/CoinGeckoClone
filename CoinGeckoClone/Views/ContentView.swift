@@ -11,10 +11,6 @@ struct ContentView: View {
     
     @State private var selection = 0
     
-    @StateObject var cryptoCoinViewModel = CryptoCoinViewModel()
-    
-    @StateObject var newsViewModel = CryptoNewsViewModel()
-    
     var body: some View {
         TabView(selection: $selection) {
             CryptoCoinListView()
@@ -27,7 +23,7 @@ struct ContentView: View {
                     Image(systemName: "banknote")
                 }
                 .tag(1)
-            CoinPicker(coinData: cryptoCoinViewModel)
+            CoinPicker()
                 .tabItem {
                     Image(systemName: "list.dash")
                 }
@@ -36,6 +32,7 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "list.dash")
                 }
+                .tag(3)
         }
     }
 }

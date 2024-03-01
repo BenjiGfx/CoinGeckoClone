@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CoinPicker: View {
     
-    @StateObject var coinData = CryptoCoinViewModel()
+    @EnvironmentObject var coinData: CryptoCoinViewModel
     
     @State private var firstselectedCoin: CryptoCoinModel?
     @State private var secondselectedCoin: CryptoCoinModel?
@@ -81,6 +81,7 @@ struct CoinPicker: View {
 
 struct CoinPicker_Previews: PreviewProvider {
     static var previews: some View {
-        CoinPicker(coinData: CryptoCoinViewModel())
+        CoinPicker()
+            .environmentObject(CryptoCoinViewModel())
     }
 }

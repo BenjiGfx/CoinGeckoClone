@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ExchangesListView: View {
     
-    @StateObject var exchangesViewModel = ExchangesViewModel()
+    @EnvironmentObject var exchangesViewModel: ExchangesViewModel
+    @EnvironmentObject var cryptoCoinViewModel: CryptoCoinViewModel
     
     var body: some View {
         VStack {
@@ -17,19 +18,24 @@ struct ExchangesListView: View {
                 .bold()
             Spacer()
             HStack {
-                Text("Rank")
-                    .bold()
-                    .frame(maxWidth: 40)
+                Text("#")
+                    .frame(maxWidth: 25)
                     .foregroundColor(.gray)
                     .font(.footnote)
-                Text("Name")
+                Text("Exchange")
                     .bold()
                     .frame(maxWidth: 90)
                     .foregroundColor(.gray)
                     .font(.footnote)
                 Spacer()
+                Text("Trustscore")
+                    .bold()
+                    .frame(maxWidth: 76)
+                    .foregroundColor(.gray)
+                    .font(.footnote)
                 Text("Exchange Volume")
                     .bold()
+                    .frame(maxWidth: 125)
                     .foregroundColor(.gray)
                     .font(.footnote)
             }
@@ -52,5 +58,7 @@ struct ExchangesListView: View {
 struct ExchangesListView_Previews: PreviewProvider {
     static var previews: some View {
         ExchangesListView()
+            .environmentObject(ExchangesViewModel())
+            .environmentObject(CryptoCoinViewModel())
     }
 }

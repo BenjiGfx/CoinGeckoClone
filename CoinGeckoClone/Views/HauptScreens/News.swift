@@ -9,10 +9,10 @@ import SwiftUI
 
 struct News: View {
     
-    @StateObject private var newsViewModel = CryptoNewsViewModel()
+    @EnvironmentObject private var newsViewModel: CryptoNewsViewModel
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Text("News")
                     .bold()
@@ -22,8 +22,8 @@ struct News: View {
                         ForEach(newsViewModel.news, id: \.url) { new in
                             NavigationLink(destination: NewsDetailView(news: new)) {
                                 NewsCardView(news: new)
-                                    .frame(alignment: .leading)
                             }
+                                .buttonStyle(PlainButtonStyle())
                         }
                     }
                     .onAppear {
@@ -39,6 +39,7 @@ struct News: View {
 struct News_Previews: PreviewProvider {
     static var previews: some View {
         News()
+            .environmentObject(CryptoNewsViewModel())
     }
 }
 

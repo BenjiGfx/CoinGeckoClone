@@ -9,14 +9,29 @@ import Foundation
 
 struct NewsModel: Codable {
     let data: [NewsData]
+    
+    enum CodingKeys: String, CodingKey {
+       case data
+    }
 }
 
-struct NewsData: Codable{
+struct NewsData: Codable {
     
-    let title, description: String
+    let title: String
+    let description: String
     let author: String?
     let url: String
-    let updated_at: Int
-    let news_site: String
-    let thumb_2x: String
+    let updatedAt: Int
+    let newsSite: String
+    let thumb2X: String
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case description
+        case author
+        case url
+        case updatedAt = "updated_at"
+        case newsSite = "news_site"
+        case thumb2X = "thumb_2x"
+    }
 }

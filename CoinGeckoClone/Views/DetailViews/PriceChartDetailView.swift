@@ -54,16 +54,22 @@ struct PriceChartDetailView: View {
                 }
                 .padding()
                 if isChartViewDisplayed {
-                                    ChartView(coin: coin) // Show ChartView
-                                } else {
-                                    DailyTFChartView(coin: dailyTFviewModel.getPrices(id: coin.id)) // Show DailyTFChartView
-                                }
-                                Spacer()
-                                Button(action: {
-                                    isChartViewDisplayed.toggle() // Toggle between ChartView and DailyTFChartView
-                                }) {
-                                    Text(isChartViewDisplayed ? "Show DailyTF Chart" : "Show Regular Chart") // Change button text based on displayed chart
-                                }
+                    ChartView(coin: coin)
+                } else {
+                    DailyTFChartView(coin: dailyTFviewModel.getPrices(id: coin.id))
+                }
+                Spacer()
+                Button(action: {
+                    isChartViewDisplayed.toggle()
+                }) {
+                    Text(isChartViewDisplayed ? "Alltime Daily Chart" : "Last 7 Days Chart")
+                }
+                .padding()
+                .font(.headline)
+                .foregroundColor(.white)
+                .background(Color.cyan)
+                .cornerRadius(10)
+                .padding()
                 Spacer()
             }
         }

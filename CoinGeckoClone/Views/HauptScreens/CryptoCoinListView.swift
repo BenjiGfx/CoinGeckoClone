@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CryptoCoinListView: View {
     
-    @StateObject var cryptoCoinViewModel = CryptoCoinViewModel()
+    @EnvironmentObject var cryptoCoinViewModel: CryptoCoinViewModel
     
     var body: some View {
         NavigationView {
@@ -68,5 +68,6 @@ struct CryptoCoinListView: View {
 struct CryptoCoinListView_Previews: PreviewProvider {
     static var previews: some View {
         CryptoCoinListView()
+            .environmentObject(CryptoCoinViewModel())
     }
 }

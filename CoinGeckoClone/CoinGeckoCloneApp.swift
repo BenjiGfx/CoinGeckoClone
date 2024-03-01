@@ -12,6 +12,9 @@ struct CoinGeckoCloneApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(CryptoCoinViewModel())
+                .environmentObject(ExchangesViewModel())
+                .environmentObject(CryptoNewsViewModel())
         }
     }
 }
