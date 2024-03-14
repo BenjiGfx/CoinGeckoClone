@@ -122,6 +122,8 @@
 		BD5430432B73B22D003E0B0D /* API Models */ = {
 			isa = PBXGroup;
 			children = (
+				BD5430402B73B173003E0B0D /* ExchangesModel.swift */,
+				BDBE3D892B715BE00052043D /* CryptoCoinModel.swift */,
 				BD0215162B84A400003750CB /* DailyTFModel.swift */,
 				BD5C08852B8C926400C0666F /* NewsModel.swift */,
 			);
@@ -140,6 +142,8 @@
 		BDBE3D6E2B715B7D0052043D = {
 			isa = PBXGroup;
 			children = (
+				BDBE3D7A2B715B7D0052043D /* CoinGeckoCloneApp.swift */,
+				BD50EF472BA3302200D69A0F /* GoogleService-Info.plist */,
 				BDBE3D792B715B7D0052043D /* CoinGeckoClone */,
 				BDBE3D782B715B7D0052043D /* Products */,
 				BD50EF3C2BA1EE6F00D69A0F /* Frameworks */,
@@ -157,14 +161,12 @@
 		BDBE3D792B715B7D0052043D /* CoinGeckoClone */ = {
 			isa = PBXGroup;
 			children = (
-				BD50EF472BA3302200D69A0F /* GoogleService-Info.plist */,
 				BD50EF232B908A1900D69A0F /* Repository */,
 				BD54304E2B7BA45A003E0B0D /* Components */,
 				BDBE3D8D2B7165D00052043D /* Views */,
 				BDBE3D8C2B7165C80052043D /* ViewModels */,
 				BDBE3D8B2B7165BF0052043D /* Enums */,
 				BDBE3D882B715B930052043D /* Models */,
-				BDBE3D7A2B715B7D0052043D /* CoinGeckoCloneApp.swift */,
 				BDBE3D7E2B715B7F0052043D /* Assets.xcassets */,
 				BDBE3D802B715B7F0052043D /* Preview Content */,
 				BD50EF262B90D34800D69A0F /* Utils.swift */,
@@ -185,8 +187,6 @@
 			children = (
 				BD50EF3A2BA1ECEB00D69A0F /* FirebaseManager.swift */,
 				BD5430432B73B22D003E0B0D /* API Models */,
-				BDBE3D892B715BE00052043D /* CryptoCoinModel.swift */,
-				BD5430402B73B173003E0B0D /* ExchangesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

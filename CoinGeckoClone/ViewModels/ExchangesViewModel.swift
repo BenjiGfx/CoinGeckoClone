@@ -31,6 +31,22 @@ class ExchangesViewModel: ObservableObject {
             } catch {
                 print("Request failed with error: \(error)")
             }
+            print("writing exchanges to firestore")
+            writeExchangesToFirestore()
+        }
+    }
+    
+    func writeExchangesToFirestore() {
+        for exchange in self.exchanges {
+            FirebaseManager.writeExchange(exchange: exchange)
+        }
+    }
+    
+    func fetchExchangesFromFirestore() {
+        exchanges = FirebaseManager.fetchAllExchanges()
+        if exchanges.isEmpty {
+            print("Leere Liste an Exchanges aus Firestore erhalten")
+            exchanges = Self.initialExchanges
         }
     }
 }
