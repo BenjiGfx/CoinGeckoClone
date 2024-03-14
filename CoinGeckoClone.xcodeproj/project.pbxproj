@@ -15,8 +15,16 @@
 		BD0215212B874BBB003750CB /* SearchedCoinCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0215202B874BBB003750CB /* SearchedCoinCardView.swift */; };
 		BD50EF252B908A3600D69A0F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50EF242B908A3600D69A0F /* Repository.swift */; };
 		BD50EF272B90D34800D69A0F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50EF262B90D34800D69A0F /* Utils.swift */; };
-		BD50EF292B9F837F00D69A0F /* PersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50EF282B9F837F00D69A0F /* PersistentStore.swift */; };
-		BD50EF2C2B9F848800D69A0F /* CoinGeckoClone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD50EF2A2B9F848800D69A0F /* CoinGeckoClone.xcdatamodeld */; };
+		BD50EF312BA1BF8C00D69A0F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BD50EF302BA1BF8C00D69A0F /* FirebaseAnalytics */; };
+		BD50EF332BA1BF8C00D69A0F /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = BD50EF322BA1BF8C00D69A0F /* FirebaseAnalyticsOnDeviceConversion */; };
+		BD50EF352BA1BF8C00D69A0F /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BD50EF342BA1BF8C00D69A0F /* FirebaseAnalyticsSwift */; };
+		BD50EF372BA1BF8C00D69A0F /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = BD50EF362BA1BF8C00D69A0F /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		BD50EF392BA1BF8C00D69A0F /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = BD50EF382BA1BF8C00D69A0F /* FirebaseAppCheck */; };
+		BD50EF3B2BA1ECEB00D69A0F /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50EF3A2BA1ECEB00D69A0F /* FirebaseManager.swift */; };
+		BD50EF3E2BA1EE6F00D69A0F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BD50EF3D2BA1EE6F00D69A0F /* FirebaseFirestore */; };
+		BD50EF402BA1EE7B00D69A0F /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BD50EF3F2BA1EE7B00D69A0F /* FirebaseFirestoreSwift */; };
+		BD50EF422BA1EEA100D69A0F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BD50EF412BA1EEA100D69A0F /* FirebaseAuth */; };
+		BD50EF482BA3302200D69A0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD50EF472BA3302200D69A0F /* GoogleService-Info.plist */; };
 		BD5430392B72B1CF003E0B0D /* ExchangesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5430382B72B1CF003E0B0D /* ExchangesListView.swift */; };
 		BD54303F2B72B20E003E0B0D /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD54303E2B72B20E003E0B0D /* News.swift */; };
 		BD5430412B73B173003E0B0D /* ExchangesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5430402B73B173003E0B0D /* ExchangesModel.swift */; };
@@ -50,8 +58,8 @@
 		BD0215202B874BBB003750CB /* SearchedCoinCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedCoinCardView.swift; sourceTree = "<group>"; };
 		BD50EF242B908A3600D69A0F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		BD50EF262B90D34800D69A0F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		BD50EF282B9F837F00D69A0F /* PersistentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
-		BD50EF2B2B9F848800D69A0F /* CoinGeckoClone.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoinGeckoClone.xcdatamodel; sourceTree = "<group>"; };
+		BD50EF3A2BA1ECEB00D69A0F /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		BD50EF472BA3302200D69A0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BD5430382B72B1CF003E0B0D /* ExchangesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangesListView.swift; sourceTree = "<group>"; };
 		BD54303E2B72B20E003E0B0D /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		BD5430402B73B173003E0B0D /* ExchangesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangesModel.swift; sourceTree = "<group>"; };
@@ -82,6 +90,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD50EF352BA1BF8C00D69A0F /* FirebaseAnalyticsSwift in Frameworks */,
+				BD50EF312BA1BF8C00D69A0F /* FirebaseAnalytics in Frameworks */,
+				BD50EF332BA1BF8C00D69A0F /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				BD50EF402BA1EE7B00D69A0F /* FirebaseFirestoreSwift in Frameworks */,
+				BD50EF392BA1BF8C00D69A0F /* FirebaseAppCheck in Frameworks */,
+				BD50EF372BA1BF8C00D69A0F /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				BD50EF3E2BA1EE6F00D69A0F /* FirebaseFirestore in Frameworks */,
+				BD50EF422BA1EEA100D69A0F /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,13 +112,11 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		BD5430422B73B213003E0B0D /* CoreDate */ = {
+		BD50EF3C2BA1EE6F00D69A0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BD50EF282B9F837F00D69A0F /* PersistentStore.swift */,
-				BD50EF2A2B9F848800D69A0F /* CoinGeckoClone.xcdatamodeld */,
 			);
-			path = CoreDate;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BD5430432B73B22D003E0B0D /* API Models */ = {
@@ -128,6 +142,7 @@
 			children = (
 				BDBE3D792B715B7D0052043D /* CoinGeckoClone */,
 				BDBE3D782B715B7D0052043D /* Products */,
+				BD50EF3C2BA1EE6F00D69A0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +157,7 @@
 		BDBE3D792B715B7D0052043D /* CoinGeckoClone */ = {
 			isa = PBXGroup;
 			children = (
+				BD50EF472BA3302200D69A0F /* GoogleService-Info.plist */,
 				BD50EF232B908A1900D69A0F /* Repository */,
 				BD54304E2B7BA45A003E0B0D /* Components */,
 				BDBE3D8D2B7165D00052043D /* Views */,
@@ -167,10 +183,10 @@
 		BDBE3D882B715B930052043D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BD50EF3A2BA1ECEB00D69A0F /* FirebaseManager.swift */,
 				BD5430432B73B22D003E0B0D /* API Models */,
 				BDBE3D892B715BE00052043D /* CryptoCoinModel.swift */,
 				BD5430402B73B173003E0B0D /* ExchangesModel.swift */,
-				BD5430422B73B213003E0B0D /* CoreDate */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -255,6 +271,16 @@
 			dependencies = (
 			);
 			name = CoinGeckoClone;
+			packageProductDependencies = (
+				BD50EF302BA1BF8C00D69A0F /* FirebaseAnalytics */,
+				BD50EF322BA1BF8C00D69A0F /* FirebaseAnalyticsOnDeviceConversion */,
+				BD50EF342BA1BF8C00D69A0F /* FirebaseAnalyticsSwift */,
+				BD50EF362BA1BF8C00D69A0F /* FirebaseAnalyticsWithoutAdIdSupport */,
+				BD50EF382BA1BF8C00D69A0F /* FirebaseAppCheck */,
+				BD50EF3D2BA1EE6F00D69A0F /* FirebaseFirestore */,
+				BD50EF3F2BA1EE7B00D69A0F /* FirebaseFirestoreSwift */,
+				BD50EF412BA1EEA100D69A0F /* FirebaseAuth */,
+			);
 			productName = CoinGeckoClone;
 			productReference = BDBE3D772B715B7D0052043D /* CoinGeckoClone.app */;
 			productType = "com.apple.product-type.application";
@@ -283,6 +309,9 @@
 				Base,
 			);
 			mainGroup = BDBE3D6E2B715B7D0052043D;
+			packageReferences = (
+				BD50EF2F2BA1BF8C00D69A0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = BDBE3D782B715B7D0052043D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -299,6 +328,7 @@
 			files = (
 				BDBE3D822B715B7F0052043D /* Preview Assets.xcassets in Resources */,
 				BDBE3D7F2B715B7F0052043D /* Assets.xcassets in Resources */,
+				BD50EF482BA3302200D69A0F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,19 +353,18 @@
 				BDBE3D962B7169870052043D /* CryptoCoinCardView.swift in Sources */,
 				BD5C088A2B8CC37300C0666F /* NewsDetailView.swift in Sources */,
 				BD5430472B73CD91003E0B0D /* ExchangesCardView.swift in Sources */,
-				BD50EF2C2B9F848800D69A0F /* CoinGeckoClone.xcdatamodeld in Sources */,
 				BD5430452B73B2C6003E0B0D /* ExchangesViewModel.swift in Sources */,
 				BD5C08882B8C957E00C0666F /* NewsCardView.swift in Sources */,
 				BDBE3D7D2B715B7D0052043D /* ContentView.swift in Sources */,
 				BD5C08862B8C926400C0666F /* NewsModel.swift in Sources */,
 				BDBE3D8A2B715BE00052043D /* CryptoCoinModel.swift in Sources */,
+				BD50EF3B2BA1ECEB00D69A0F /* FirebaseManager.swift in Sources */,
 				BD0215212B874BBB003750CB /* SearchedCoinCardView.swift in Sources */,
 				BD02151B2B84B97C003750CB /* DailyTFChartView.swift in Sources */,
 				BDBE3D8F2B7165EA0052043D /* CryptoCoinViewModel.swift in Sources */,
 				BDBE3D982B71733B0052043D /* CryptoCoinDetailView.swift in Sources */,
 				BDBE3D912B7165FF0052043D /* HTTPError.swift in Sources */,
 				BD5430392B72B1CF003E0B0D /* ExchangesListView.swift in Sources */,
-				BD50EF292B9F837F00D69A0F /* PersistentStore.swift in Sources */,
 				BD5430522B7E1CBE003E0B0D /* ChartView.swift in Sources */,
 				BD5430412B73B173003E0B0D /* ExchangesModel.swift in Sources */,
 				BDBE3D7B2B715B7D0052043D /* CoinGeckoCloneApp.swift in Sources */,
@@ -543,18 +572,59 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCVersionGroup section */
-		BD50EF2A2B9F848800D69A0F /* CoinGeckoClone.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				BD50EF2B2B9F848800D69A0F /* CoinGeckoClone.xcdatamodel */,
-			);
-			currentVersion = BD50EF2B2B9F848800D69A0F /* CoinGeckoClone.xcdatamodel */;
-			path = CoinGeckoClone.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
+/* Begin XCRemoteSwiftPackageReference section */
+		BD50EF2F2BA1BF8C00D69A0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.22.1;
+			};
 		};
-/* End XCVersionGroup section */
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BD50EF302BA1BF8C00D69A0F /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD50EF2F2BA1BF8C00D69A0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		BD50EF322BA1BF8C00D69A0F /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD50EF2F2BA1BF8C00D69A0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		BD50EF342BA1BF8C00D69A0F /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD50EF2F2BA1BF8C00D69A0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		BD50EF362BA1BF8C00D69A0F /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD50EF2F2BA1BF8C00D69A0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		BD50EF382BA1BF8C00D69A0F /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD50EF2F2BA1BF8C00D69A0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		BD50EF3D2BA1EE6F00D69A0F /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD50EF2F2BA1BF8C00D69A0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		BD50EF3F2BA1EE7B00D69A0F /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD50EF2F2BA1BF8C00D69A0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		BD50EF412BA1EEA100D69A0F /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD50EF2F2BA1BF8C00D69A0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BDBE3D6F2B715B7D0052043D /* Project object */;
 }

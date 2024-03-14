@@ -28,7 +28,6 @@ class ExchangesViewModel: ObservableObject {
         Task {
             do {
                 self.exchanges = try await Repository.fetchExchanges()
-                print(self.exchanges)
             } catch {
                 print("Request failed with error: \(error)")
             }
