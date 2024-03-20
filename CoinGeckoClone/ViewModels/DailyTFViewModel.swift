@@ -11,6 +11,9 @@ import Foundation
 @MainActor
 class DailyTFViewModel: ObservableObject {
 
+    init() {
+
+    }
     
     
      var preise = [Double]()
@@ -18,9 +21,9 @@ class DailyTFViewModel: ObservableObject {
     
     // MARK: Variables
     
-    @Published var dailyTFs: DailyTFModel = initialDailyTF
+    @Published var dailyTFs: [DailyTFModel] = initialDailyTF
     @Published var DailyTFHistory = initialDailyTF
-    private static let initialDailyTF = DailyTFModel(prices: [[123, 1000]])
+    private static let initialDailyTF = DailyTFModel(prices: [Value(timestamp: "123", price: 1000)])
     
     // MARK: Functions
     
@@ -33,14 +36,28 @@ class DailyTFViewModel: ObservableObject {
     func fetchData(id: String) {
         Task {
             do {
-                self.dailyTFs = try await Repository.fetchDailyTF(id: id)
+                dailyTFs = try await Repository.fetchDailyTF(id: id)
                 preise = []
                 for price in dailyTFs.prices{
-                    preise.append(price[1])
+                    preise.append(price.price)
                 }
             } catch {
                 print("Request failed with error: \(error)")
             }
+            print("writing dailyTFs to firestore")
+            writeDailyTFsToFirestore(id: id)
+        }
+    }
+    
+    func writeDailyTFsToFirestore(id: String) {
+            FirebaseManager.writeDailyTF(dailyTF: dailyTFs, id: id)
+    }
+    
+    func fetchDailyTFsFromFirestore() {
+        dailyTFs = FirebaseManager.fetchAllDailyTFs()
+        if dailyTFs.prices.isEmpty {
+            print("Leehre Liste an DailyTFs aus Firestore erhalten")
+            dailyTFs = Self.initialDailyTF
         }
     }
 }

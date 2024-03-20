@@ -59,7 +59,8 @@ class Repository {
         }
         let (data, a) = try await URLSession.shared.data(from: url)
         print(a.description)
-        let result = try JSONDecoder().decode(DailyTFModel.self, from: data)
-        return result
+        print(String(data: data, encoding: .utf8))
+        let response = try JSONDecoder().decode(DailyTFModelResponse.self, from: data)
+        return DailyTFModel.fromDailyTFModelResponse(response: response)
     }
 }
