@@ -37,6 +37,7 @@
 		BD5C088A2B8CC37300C0666F /* NewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5C08892B8CC37300C0666F /* NewsDetailView.swift */; };
 		BD6BB1972BAB08FD00A3A359 /* WebSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6BB1962BAB08FD00A3A359 /* WebSheet.swift */; };
 		BD6BB1992BAB094400A3A359 /* WebSheetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6BB1982BAB094400A3A359 /* WebSheetCardView.swift */; };
+		BD6BB19B2BAB554F00A3A359 /* Pflichtenheft-BenjaminOtt_IOS.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BD6BB19A2BAB554F00A3A359 /* Pflichtenheft-BenjaminOtt_IOS.pdf */; };
 		BDBE3D7B2B715B7D0052043D /* CoinGeckoCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBE3D7A2B715B7D0052043D /* CoinGeckoCloneApp.swift */; };
 		BDBE3D7D2B715B7D0052043D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBE3D7C2B715B7D0052043D /* ContentView.swift */; };
 		BDBE3D7F2B715B7F0052043D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDBE3D7E2B715B7F0052043D /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		BD5C08892B8CC37300C0666F /* NewsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailView.swift; sourceTree = "<group>"; };
 		BD6BB1962BAB08FD00A3A359 /* WebSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSheet.swift; sourceTree = "<group>"; };
 		BD6BB1982BAB094400A3A359 /* WebSheetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSheetCardView.swift; sourceTree = "<group>"; };
+		BD6BB19A2BAB554F00A3A359 /* Pflichtenheft-BenjaminOtt_IOS.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Pflichtenheft-BenjaminOtt_IOS.pdf"; sourceTree = "<group>"; };
 		BDBE3D772B715B7D0052043D /* CoinGeckoClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinGeckoClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDBE3D7A2B715B7D0052043D /* CoinGeckoCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGeckoCloneApp.swift; sourceTree = "<group>"; };
 		BDBE3D7C2B715B7D0052043D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		BDBE3D6E2B715B7D0052043D = {
 			isa = PBXGroup;
 			children = (
+				BD6BB19A2BAB554F00A3A359 /* Pflichtenheft-BenjaminOtt_IOS.pdf */,
 				BDBE3D7A2B715B7D0052043D /* CoinGeckoCloneApp.swift */,
 				BD50EF472BA3302200D69A0F /* GoogleService-Info.plist */,
 				BDBE3D792B715B7D0052043D /* CoinGeckoClone */,
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDBE3D822B715B7F0052043D /* Preview Assets.xcassets in Resources */,
+				BD6BB19B2BAB554F00A3A359 /* Pflichtenheft-BenjaminOtt_IOS.pdf in Resources */,
 				BDBE3D7F2B715B7F0052043D /* Assets.xcassets in Resources */,
 				BD50EF482BA3302200D69A0F /* GoogleService-Info.plist in Resources */,
 			);

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CoinPicker: View {
-    
+    // TODO: Noch nicht fertig 
     @EnvironmentObject var coinData: CryptoCoinViewModel
     
     @State private var firstselectedCoin: CryptoCoinModel?

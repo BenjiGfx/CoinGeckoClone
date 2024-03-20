@@ -12,7 +12,7 @@ struct CryptoCoinListView: View {
     @EnvironmentObject var cryptoCoinViewModel: CryptoCoinViewModel
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Text("Coins")
                     .bold()

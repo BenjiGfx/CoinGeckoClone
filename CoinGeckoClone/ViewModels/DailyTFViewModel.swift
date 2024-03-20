@@ -41,12 +41,4 @@ class DailyTFViewModel: ObservableObject {
             FirebaseManager.writeDailyTF(dailyTF: dailyTF)
         }
     }
-    
-//    func fetchDailyTFsFromFirestore() {
-//        dailyTF = FirebaseManager.fetchAllDailyTFs()
-//        if dailyTF.prices.isEmpty {
-//            print("Leehre Liste an DailyTFs aus Firestore erhalten")
-//            dailyTF = Self.initialDailyTF
-//        }
-//    }
 }
