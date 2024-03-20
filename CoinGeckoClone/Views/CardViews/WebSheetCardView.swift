@@ -12,13 +12,37 @@ struct WebSheetCardView: View {
     let exchanges: Exchanges
     
     var body: some View {
-        VStack {
-            Text("\(exchanges.name):")
-                .bold()
-            Text(exchanges.url)
-                .font(.footnote)
-                .foregroundColor(.accentColor)
+        HStack {
+            AsyncImage(url: URL(string: exchanges.image)!) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            } placeholder: {
+                Image(systemName: "bitcoinsign.circle.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 25, height: 25)
+                    .padding()
+            }
+            .frame(width: 30, height: 30)
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(exchanges.name)
+                        .bold()
+                    Spacer()
+                }
+                Text(exchanges.url)
+                    .font(.footnote)
+                    .foregroundColor(.accentColor)
+                    .lineLimit(1)
+                    .truncationMode(.tail)
+            }
         }
+        .padding(8)
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color.black, lineWidth: 1)
+        )
         .padding(8)
     }
 }

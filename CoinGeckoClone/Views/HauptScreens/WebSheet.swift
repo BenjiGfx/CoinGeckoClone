@@ -33,7 +33,6 @@ struct WebSheet: View {
     }
 }
 
-
 struct WebSheet_Previews: PreviewProvider {
     static var previews: some View {
         WebSheet()

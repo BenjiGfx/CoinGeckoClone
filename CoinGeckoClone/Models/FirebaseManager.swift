@@ -104,7 +104,7 @@ class FirebaseManager {
         var exchange: Exchanges? = nil
         shared.database.collection("Exchanges").document(id).getDocument { document, error in
             if let error {
-                print("Fetching user failed:", error.localizedDescription)
+                print("Fetching exchange failed:", error.localizedDescription)
                 return
             }
             
@@ -125,25 +125,35 @@ class FirebaseManager {
     // Alle Exchanges werden mit der ID geladen
     static func fetchAllExchanges() -> [Exchanges] {
         var exchanges = [Exchanges]()
-        shared.database.collection("Exchanges").getDocuments { snapshot, error in
-            if let error {
-                print("Fetching exchanges failed:", error.localizedDescription)
-                return
-            }
-            
-            guard let snapshot else {
-                print("Dokument existiert nicht!")
-                return
-            }
-            snapshot.documents.forEach({ document in
-                do {
-                    let exchange = try document.data(as: Exchanges.self)
-                    exchanges.append(exchange)
-                } catch {
-                    print("Dokument ist kein Exchange", error.localizedDescription)
+        Task {
+            do {
+                let snapshot = try await shared.database.collection("Exchanges").getDocuments { snapshot, error in
+                    if let error {
+                        print("Fetching exchanges failed", error.localizedDescription)
+                        return
+                    }
+                    
+                    guard let snapshot else {
+                        print("Dokument existiert nicht")
+                        return
+                    }
+                    
+                    print("\(snapshot.documents.count)")
+                    snapshot.documents.forEach { document in
+                        print("begin snapshot.documents.foreach")
+                        do {
+                            let exchange = try document.data(as: Exchanges.self)
+                            print("exchange successfully parsed: \(exchanges.count)")
+                            exchanges.append(exchange)
+                        } catch {
+                            print("Dokument ist kein Coin", error.localizedDescription)
+                        }
+                        print("finished snapshot.documents.foreach")
+                    }
                 }
-            })
+            }
         }
+        print("FirebaseManager.fetchExchange: \(exchanges)")
         return exchanges
     }
     

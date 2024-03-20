@@ -9,9 +9,9 @@ import Foundation
 
 @MainActor
 class CryptoCoinViewModel: ObservableObject {
+    
     init() {
         fetchData()
-//        fetchCoinsFromFirestore()
     }
     //MARK: Variables
     

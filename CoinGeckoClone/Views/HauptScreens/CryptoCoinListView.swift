@@ -56,9 +56,6 @@ struct CryptoCoinListView: View {
                             Divider()
                         }
                     }
-                    .onAppear {
-                        //cryptoCoinViewModel.fetchData()
-                    }
                 }
             }
         }

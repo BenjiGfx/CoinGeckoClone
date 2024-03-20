@@ -8,7 +8,7 @@
 import Foundation
 
 // Model:
-struct Exchanges: Identifiable, Codable {
+struct Exchanges: Identifiable, Codable, Equatable {
     let id, name: String
     let yearEstablished: Int?
     let country, description: String?

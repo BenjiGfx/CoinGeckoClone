@@ -58,10 +58,6 @@ struct ExchangesListView: View {
                         ExchangesCardView(exchanges: exchange)
                     }
                 }
-                .onAppear {
-                    exchangesViewModel.fetchData()
-                    exchangesViewModel.fetchExchangesFromFirestore()
-                }
             }
         }
     }

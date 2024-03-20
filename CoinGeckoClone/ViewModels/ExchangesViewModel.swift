@@ -11,8 +11,7 @@ import Foundation
 class ExchangesViewModel: ObservableObject {
     
     init() {
-        //fetchData()
-        fetchExchangesFromFirestore()
+        fetchData()
     }
     
     // MARK: Variables
@@ -27,27 +26,44 @@ class ExchangesViewModel: ObservableObject {
     
     func fetchData() {
         Task {
+            self.exchanges = []
             do {
                 self.exchanges = try await Repository.fetchExchanges()
+                writeExchangesToFirestore()
             } catch {
-                print("Request failed with error: \(error)")
+                print("API-Request failed with error: \(error)")
+                await fetchExchangesFromFirestore()
+                if self.exchanges.isEmpty {
+                    self.exchanges = Self.initialExchanges
+                }
             }
-            print("writing exchanges to firestore")
-            writeExchangesToFirestore()
+            exchanges.sort(by: {$0.trustScoreRank < $1.trustScoreRank})
         }
     }
     
     func writeExchangesToFirestore() {
+        if exchanges == Self.initialExchanges {
+            return
+        }
         for exchange in self.exchanges {
             FirebaseManager.writeExchange(exchange: exchange)
         }
     }
     
-    func fetchExchangesFromFirestore() {
-        exchanges = FirebaseManager.fetchAllExchanges()
-        if exchanges.isEmpty {
-            print("Leere Liste an Exchanges aus Firestore erhalten")
-            exchanges = Self.initialExchanges
+    func fetchExchangesFromFirestore() async {
+        exchanges = []
+        do {
+            let snapshot = try await FirebaseManager.shared.database.collection("Exchanges").getDocuments()
+            snapshot.documents.forEach { document in
+                do {
+                    let exchange = try document.data(as: Exchanges.self)
+                    self.exchanges.append(exchange)
+                } catch {
+                    print("Dokument ist kein Exchange", error.localizedDescription)
+                }
+            }
+        } catch {
+            print("Firestore-Request failed with error: \(error)")
         }
     }
 }

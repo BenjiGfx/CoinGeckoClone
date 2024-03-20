@@ -23,16 +23,16 @@ struct ContentView: View {
                     Image(systemName: "banknote")
                 }
                 .tag(1)
-            CoinPicker()
-                .tabItem {
-                    Image(systemName: "list.dash")
-                }
-                .tag(2)
+//            CoinPicker()
+//                .tabItem {
+//                    Image(systemName: "list.dash")
+//                }
+//                .tag(2)
             News()
                 .tabItem {
                     Image(systemName: "list.dash")
                 }
-                .tag(3)
+                .tag(2)
         }
     }
 }
