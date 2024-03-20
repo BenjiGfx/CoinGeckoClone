@@ -11,7 +11,8 @@ import Foundation
 class ExchangesViewModel: ObservableObject {
     
     init() {
-        fetchData()
+        //fetchData()
+        fetchExchangesFromFirestore()
     }
     
     // MARK: Variables

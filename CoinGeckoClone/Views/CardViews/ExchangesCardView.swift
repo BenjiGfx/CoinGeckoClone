@@ -73,7 +73,7 @@ struct ExchangesCardView: View {
 
 struct ExchangesCardView_Previews: PreviewProvider {
     static var cryptoCoinViewModel = { cryptoCoinViewModel in
-        cryptoCoinViewModel.fetchData()
+        //cryptoCoinViewModel.fetchData()
         return cryptoCoinViewModel
     } (CryptoCoinViewModel())
     

@@ -16,48 +16,37 @@ class DailyTFViewModel: ObservableObject {
     }
     
     
-     var preise = [Double]()
-    
     
     // MARK: Variables
     
-    @Published var dailyTFs: [DailyTFModel] = initialDailyTF
-    @Published var DailyTFHistory = initialDailyTF
-    private static let initialDailyTF = DailyTFModel(prices: [Value(timestamp: "123", price: 1000)])
+    @Published var dailyTF: DailyTFModel = initialDailyTF
+    private static let initialDailyTF = DailyTFModel(id: "bitcoin", prices: [Value(timestamp: "123", price: 1000)])
     
     // MARK: Functions
     
-    func getPrices(id: String) -> [Double] {
+    func getDailyTF(id: String) -> DailyTFModel {
         fetchData(id: id)
-        return self.preise
+        return self.dailyTF
         
     }
     
     func fetchData(id: String) {
         Task {
             do {
-                dailyTFs = try await Repository.fetchDailyTF(id: id)
-                preise = []
-                for price in dailyTFs.prices{
-                    preise.append(price.price)
-                }
+                dailyTF = try await Repository.fetchDailyTF(id: id)
             } catch {
                 print("Request failed with error: \(error)")
             }
             print("writing dailyTFs to firestore")
-            writeDailyTFsToFirestore(id: id)
+            FirebaseManager.writeDailyTF(dailyTF: dailyTF)
         }
     }
     
-    func writeDailyTFsToFirestore(id: String) {
-            FirebaseManager.writeDailyTF(dailyTF: dailyTFs, id: id)
-    }
-    
-    func fetchDailyTFsFromFirestore() {
-        dailyTFs = FirebaseManager.fetchAllDailyTFs()
-        if dailyTFs.prices.isEmpty {
-            print("Leehre Liste an DailyTFs aus Firestore erhalten")
-            dailyTFs = Self.initialDailyTF
-        }
-    }
+//    func fetchDailyTFsFromFirestore() {
+//        dailyTF = FirebaseManager.fetchAllDailyTFs()
+//        if dailyTF.prices.isEmpty {
+//            print("Leehre Liste an DailyTFs aus Firestore erhalten")
+//            dailyTF = Self.initialDailyTF
+//        }
+//    }
 }

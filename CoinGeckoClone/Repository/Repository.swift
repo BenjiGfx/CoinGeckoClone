@@ -61,6 +61,6 @@ class Repository {
         print(a.description)
         print(String(data: data, encoding: .utf8))
         let response = try JSONDecoder().decode(DailyTFModelResponse.self, from: data)
-        return DailyTFModel.fromDailyTFModelResponse(response: response)
+        return DailyTFModel.fromDailyTFModelResponse(id: id, response: response)
     }
 }

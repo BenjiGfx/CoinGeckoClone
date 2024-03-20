@@ -9,15 +9,13 @@ import SwiftUI
 
 struct DailyTFChartView: View {
     
-    
-    
     let data: [Double]
     let maxY: Double
     let minY: Double
     let lineColor: Color
 
-    init(coin: [Double]) {
-        data = coin
+    init(dailyTF: DailyTFModel) {
+        data = dailyTF.prices.map{$0.price}
         maxY = data.max() ?? 0
         minY = data.min() ?? 0
         let priceChange = (data.last ?? 0) - (data.first ?? 0)
@@ -28,9 +26,10 @@ struct DailyTFChartView: View {
         GeometryReader { geometry in
             Path { path in
                 for index in data.indices {
+                    let price = data[index]
                     let xPosition = geometry.size.width / CGFloat(data.count) * CGFloat(index + 1)
                     let yAxis = maxY - minY
-                    let yPosition = (1 - CGFloat((data[index] - minY) / yAxis)) * geometry.size.height
+                    let yPosition = (1 - CGFloat((price - minY) / yAxis)) * geometry.size.height
                     if index == 0 {
                         path.move(to: CGPoint(x: xPosition, y: yPosition))
                     }
@@ -80,6 +79,6 @@ struct DailyTFChartView: View {
 
 struct DailyTFChartView_Previews: PreviewProvider {
     static var previews: some View {
-        DailyTFChartView(coin: [135.3, 141.96, 135.3])
+        DailyTFChartView(dailyTF: DailyTFViewModel().dailyTF)
     }
 }

@@ -11,11 +11,22 @@ struct ExchangesListView: View {
     
     @EnvironmentObject var exchangesViewModel: ExchangesViewModel
     @EnvironmentObject var cryptoCoinViewModel: CryptoCoinViewModel
+    @State private var isSheetPesented = false
     
     var body: some View {
         VStack {
-            Text("Exchanges")
-                .bold()
+            HStack {
+                Text("Exchanges")
+                    .bold()
+                Button(action: {
+                    isSheetPesented = true
+                }) {
+                    Image(systemName: "link")
+                }
+                .sheet(isPresented: $isSheetPesented) {
+                    WebSheet()
+                }
+            }
             Spacer()
             HStack {
                 Text("#")
@@ -49,6 +60,7 @@ struct ExchangesListView: View {
                 }
                 .onAppear {
                     exchangesViewModel.fetchData()
+                    exchangesViewModel.fetchExchangesFromFirestore()
                 }
             }
         }

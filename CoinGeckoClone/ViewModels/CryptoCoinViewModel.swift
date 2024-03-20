@@ -11,6 +11,7 @@ import Foundation
 class CryptoCoinViewModel: ObservableObject {
     init() {
         fetchData()
+//        fetchCoinsFromFirestore()
     }
     //MARK: Variables
     
@@ -24,27 +25,45 @@ class CryptoCoinViewModel: ObservableObject {
     
     func fetchData() {
         Task {
+            self.coinData = []
             do {
                 self.coinData = try await Repository.fetchCoins()
+                writeCoinsToFirestore()
+
             } catch {
-                print("Request failed with error: \(error)")
+                print("API-Request failed with error: \(error)")
+                await fetchCoinsFromFirestore()
+                if self.coinData.isEmpty {
+                    self.coinData = Self.initialCoinData
+                }
             }
-            print("writing coins to firestore")
-            writeCoinsToFirestore()
+            coinData.sort(by: {$0.rank < $1.rank})
         }
     }
     
     func writeCoinsToFirestore() {
+        if coinData == Self.initialCoinData {
+            return
+        }
         for coin in self.coinData {
             FirebaseManager.writeCoin(coin: coin)
         }
     }
     
-    func fetchCoinsFromFirestore() {
-        coinData = FirebaseManager.fetchAllCoins()
-        if coinData.isEmpty {
-            print("Leere Liste an Coins aus Firestore erhalten.")
-            coinData = Self.initialCoinData
+    func fetchCoinsFromFirestore() async {
+        coinData = []
+        do {
+            let snapshot = try await FirebaseManager.shared.database.collection("Cryptocoins").getDocuments()
+            snapshot.documents.forEach{ document in
+                do {
+                    let coin = try document.data(as: CryptoCoinModel.self)
+                    self.coinData.append(coin)
+                } catch {
+                    print("Dokument ist kein Coin", error.localizedDescription)
+                }
+            }
+        } catch {
+            print("Firestore-Request failed with error: \(error)")
         }
     }
 }

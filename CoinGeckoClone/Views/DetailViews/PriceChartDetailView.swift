@@ -56,7 +56,7 @@ struct PriceChartDetailView: View {
                 if isChartViewDisplayed {
                     ChartView(coin: coin)
                 } else {
-                    DailyTFChartView(coin: dailyTFviewModel.getPrices(id: coin.id))
+                    DailyTFChartView(dailyTF: dailyTFviewModel.getDailyTF(id: coin.id))
                 }
                 Spacer()
                 Button(action: {

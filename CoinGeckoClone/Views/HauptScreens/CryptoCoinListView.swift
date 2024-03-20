@@ -57,7 +57,7 @@ struct CryptoCoinListView: View {
                         }
                     }
                     .onAppear {
-                        cryptoCoinViewModel.fetchData()
+                        //cryptoCoinViewModel.fetchData()
                     }
                 }
             }
